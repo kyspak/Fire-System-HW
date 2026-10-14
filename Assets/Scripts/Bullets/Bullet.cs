@@ -31,7 +31,7 @@ namespace Bullets
 
         public void Launch()
         {
-            _rb.linearVelocity = Vector2.right * _speed;
+            _rb.linearVelocity = transform.right * _speed;
             Destroy(gameObject, _lifeTime);
         }
 
@@ -39,10 +39,23 @@ namespace Bullets
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.TryGetComponent<Bullet>(out _))
+            {
+                return;
+            }
+            
             if (other.TryGetComponent(out IDamageable target))
             {
                 target.TakeDamage(_damage);
+                Destroy(gameObject);
+                return;
             }
+
+            if (!other.isTrigger)
+            {
+                Destroy(gameObject);
+            }
+            
         }
         
         

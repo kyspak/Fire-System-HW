@@ -1,4 +1,5 @@
 ﻿using Input;
+using Weapon;
 using Zenject;
 
 namespace Installers
@@ -9,6 +10,10 @@ namespace Installers
         {
             Container.Bind<IInputService>()
                 .To<InputReader>()
+                .FromComponentInHierarchy()
+                .AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<WeaponController>()
                 .FromComponentInHierarchy()
                 .AsSingle();
         }

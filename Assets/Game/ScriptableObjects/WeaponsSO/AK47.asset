@@ -17,4 +17,7 @@ MonoBehaviour:
   <Description>k__BackingField: Shoots with 7.62x39mm rounds
   <FireRate>k__BackingField: 10
   <DamageMultiplier>k__BackingField: 1.2
+  <FirePointOffset>k__BackingField: {x: 1.5, y: 0.1}
+  <BulletsPerShot>k__BackingField: 1
+  <SpreadAngle>k__BackingField: 0
   <BulletData>k__BackingField: {fileID: 11400000, guid: eead658cf5f7c164d9d4db9febdddccd, type: 2}
