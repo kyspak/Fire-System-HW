@@ -12,6 +12,12 @@ public class WeaponDataSO : ScriptableObject
     [field: SerializeField] public string Description { get; set; } = "lorem ipsum";
     [field: SerializeField] public float FireRate { get; set; } = 1f;
     [field: SerializeField] public float DamageMultiplier { get; set; } = 1.0f;
+    [field: SerializeField] public Vector2 FirePointOffset { get; set; } = new Vector2(1.45f, 0.01f);
+    
+    [Header("Параметры дроби/разброса")]
+    [field: SerializeField] public int BulletsPerShot { get; set; } = 1;
+    [field: SerializeField] public float SpreadAngle { get; set; } = 0f;
+    
     
     [Header("Допустимый вид пуль")]
     [field: SerializeField] public BulletDataSO BulletData{ get; set; }
